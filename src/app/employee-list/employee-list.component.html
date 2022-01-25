@@ -1,0 +1,34 @@
+<div class="container custom-container-2">
+    <!-- verificando os resgistros - se não ocorrer será exibido a div abaixo  -->
+    <div class="no-data text-center" *ngIf="listaColaboradores.
+    length == 0">
+        <p>Ainda não há registro adicionado! Crie um registro... clique
+            no botão abaixo</p>
+        <button class="btn btn-outline-primary" routerLink="/create-emlpoyee">Adicionar Registro</button>
+    </div>
+    <!-- caso contrário, será exibida a div abaixo -->
+    <div *ngIf="listaColaboradores !== 0">
+        <h3>Employees List - Componente de lista de lista de colaboradores</h3>
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                    <th scope="col">Id Colaborador</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Ação a executar</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let x of listaColaboradores">
+                        <td>{{x.id}}</td>
+                        <td>{{x.name}}</td>
+                        <td>{{x.email}}</td>
+                        <td>{{x.phone}}</td>
+                        <span class="edit" routerLink="/employee-edit/{{x.id}}">Editar</span>
+                        <span class="delete" (click)="excluirColaborador(x.id)">Excluir</span>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

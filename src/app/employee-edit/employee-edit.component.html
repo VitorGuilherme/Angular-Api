@@ -1,0 +1,25 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+        <h2 class="mb-3 text-center">Atualização de Registro</h2>
+        <!-- criando o formulário -->
+        <div class="form-group">
+            <input type="text" [(ngModel)]="dadosRegistro.name" placeholder="Nome"
+             class="form-control" />
+        </div>
+        
+        <div class="form-group">
+            <input type="email" [(ngModel)] = "dadosRegistro.email" placeholder="Email"
+             class="form-control">
+        </div>
+
+        <div class="form-group">
+            <input type="text" [(ngModel)] = "dadosRegistro.phone" placeholder="Telefone"
+            class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <button class="btn btn success btn-lg btn-block"
+             (click)="atualizacaoRegistro()">Update Employee</button>
+        </div>
+    </div>
+</div>
